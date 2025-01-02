@@ -1,6 +1,6 @@
 # Price Comparison
 
-It is a price comparison / average price finder tool of product that you are searching for and also it just run in vs code not make for mobile devices developed using python.
+It is a price comparison / average price finder tool of product that you are searching for and also it just run in vs code not make for mobile devices & it is developed using python.
 
 ## Requirements to use this tool:
 
