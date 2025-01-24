@@ -1,4 +1,4 @@
-# Price Comparison
+# Price Comparison of E-commerce and Quick-commerce
 
 It is a price comparison / average price finder tool of product that you are searching for and also it just run in vs code not make for mobile devices & it is developed using python.
 
@@ -10,17 +10,26 @@ Since this tools is developed using Python then you need python and also you nee
 So, install Python, Edge browser, the webdriver I am alredy provided here and also Vs Code to run this 👍
 ```
 
-## What happens when you run this?
+## What happens when you run E-Commerce?
 
 ```python
 Enter Product Name : surf excel powder 5kg
 
-    company    price
-0    Amazon     ₹735
-1  Flipkart     ₹639
-2     Zepto     ₹168
-3  Tata Neu     ₹9.4
-4   JioMart  ₹542.00
+    company       price
+0     Croma     ₹64,900
+1  Tata Neu      ₹69490
+2    Amazon      59,999
+3  Flipkart     ₹58,999
+4   JioMart  ₹60,490.00
+```
+## What happens when you run Quick Commerce?
+
+```python
+Enter Product Name : vicks vaporub
+
+            company price
+0             Zepto  ₹172
+1  Swiggy Instamart   179
 ```
 
 ## Two ways to run this :
