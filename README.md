@@ -13,7 +13,7 @@ So, install Python, Edge browser, the webdriver I am alredy provided here and al
 ## What happens when you run E-Commerce?
 
 ```python
-Enter Product Name : surf excel powder 5kg
+Enter Product Name : Iphone 15
 
     company       price
 0     Croma     ₹64,900
