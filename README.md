@@ -1,6 +1,6 @@
-# Price Scrapper of E-commerce and Quick-commerce
+# Price Scraper of E-commerce and Quick-commerce
 
-It is a price scrapertool of product that you are searching for and also it just run in vs code not make for mobile devices & it is developed using python.
+It is a price scraper of product that you are searching for and also it just run in vs code not make for mobile devices & it is developed using python.
 
 ## Requirements to use this tool:
 
@@ -45,3 +45,4 @@ With gui mode.
 #options.add_argument("--headless") (just comment this out)
 ```
 ## ⚡ Sometimes it give you the wrong price but you will get the idea of average price 👍.
+## 🌟 Give it a start if it helps you.
