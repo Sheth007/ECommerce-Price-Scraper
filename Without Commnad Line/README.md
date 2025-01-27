@@ -12,27 +12,6 @@ So, install Python, Edge browser, the webdriver I am alredy provided here and al
 
 ## What happens when you run this?
 
-```python
-Enter Product Name : surf excel powder 5kg
+https://github.com/user-attachments/assets/c7ac4e6c-4900-4809-860c-fd75b0c04d7b
 
-    company    price
-0    Amazon     ₹735
-1  Flipkart     ₹639
-2     Zepto     ₹168
-3  Tata Neu     ₹9.4
-4   JioMart  ₹542.00
-```
-
-## Two ways to run this :
-No gui mode.
-
-```bash
-options.add_argument("--headless") #line 126
-```
-
-With gui mode.
-
-```bash
-#options.add_argument("--headless") (just comment this out)
-```
 ## ⚡ Sometimes it give you the wrong price but you will get the idea of average price 👍.
