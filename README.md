@@ -11,12 +11,15 @@ So, install Python, Edge browser, the webdriver I am alredy provided here and al
 ```
 
 ## Two ways to run this :
-## 1. Without Command Line :
+## 1. Price Scraper-App :
 
 https://github.com/user-attachments/assets/a5827393-e0ad-447e-b1c1-95fc6f29b708
 
-## 2. With Command Line:
+## 2. Price Scraper-Cli:
 
 https://github.com/user-attachments/assets/af9ed65a-66ec-4ee7-9d8b-4c6606ece751
 
+```bash
+This second method has two methods so checck the repo. 👍
+```
 ## 🌟 Give it a start if it helps you.
