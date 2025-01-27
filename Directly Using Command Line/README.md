@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/af9ed65a-66ec-4ee7-9d8b-4c6606ece751
 ```bash
 options.add_argument("--headless") #line no 133
 ```
-<h3>⚠ Tip : so, due to any reasons the price will not be fetched then just run this code with gui (so you can see browser opens and product being searches and all)</h3>
+<h5>⚠ Tip : so, due to website loads data dynamically then sometims price will not be fetched then you just run this code with gui (so you can see browser opens and product being searches and all)</h5>
 
 ## ⚡ Sometimes it give you the wrong price but you will get the idea of price 👍.
 ## 🌟 Give it a start if it helps you.
