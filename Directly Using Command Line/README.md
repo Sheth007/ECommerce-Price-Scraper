@@ -11,8 +11,9 @@ So, install Python, Edge browser, the webdriver I am alredy provided here and al
 ```
 
 ## What happens when you run the code?
+## To run this you can go with non-headless mode which shows everythig like browser opens and product searches and all
 
-
+https://github.com/user-attachments/assets/af9ed65a-66ec-4ee7-9d8b-4c6606ece751
 
 ## ⚡ Sometimes it give you the wrong price but you will get the idea of price 👍.
 ## 🌟 Give it a start if it helps you.
