@@ -130,7 +130,7 @@ def get_jiomart_price(product_name, driver):
 def fetch_prices(product_name):
     service = Service(EDGE_DRIVER_PATH)
     options = Options()
-    #options.add_argument("--headless")  # if you put this line in comment the it will run in gui mode
+    options.add_argument("--headless")  # if you put this line in comment the it will run in gui mode
     
     results = []
     with webdriver.Edge(service=service, options=options) as driver:
