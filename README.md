@@ -10,39 +10,13 @@ Since this tools is developed using Python then you need python and also you nee
 So, install Python, Edge browser, the webdriver I am alredy provided here and also Vs Code to run this 👍
 ```
 
-## What happens when you run E-Commerce?
-
-```python
-Enter Product Name : Iphone 15
-
-    company       price
-0     Croma     ₹64,900
-1  Tata Neu      ₹69490
-2    Amazon      59,999
-3  Flipkart     ₹58,999
-4   JioMart  ₹60,490.00
-```
-## What happens when you run Quick Commerce?
-
-```python
-Enter Product Name : vicks vaporub
-
-            company price
-0             Zepto  ₹172
-1  Swiggy Instamart   179
-```
-
 ## Two ways to run this :
-No gui mode.
+## 1. Without Command Line :
 
-```bash
-options.add_argument("--headless") #line 126
-```
+https://github.com/user-attachments/assets/a5827393-e0ad-447e-b1c1-95fc6f29b708
 
-With gui mode.
+## 2. With Command Line:
 
-```bash
-#options.add_argument("--headless") (just comment this out)
-```
-## ⚡ Sometimes it give you the wrong price but you will get the idea of average price 👍.
+https://github.com/user-attachments/assets/af9ed65a-66ec-4ee7-9d8b-4c6606ece751
+
 ## 🌟 Give it a start if it helps you.
