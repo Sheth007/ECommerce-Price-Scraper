@@ -12,7 +12,7 @@ So, install Python, Edge browser, the webdriver I am alredy provided here and al
 
 ## What happens when you run the code?
 
-https://github.com/user-attachments/assets/c7ac4e6c-4900-4809-860c-fd75b0c04d7b
+
 
 ## ⚡ Sometimes it give you the wrong price but you will get the idea of price 👍.
 ## 🌟 Give it a start if it helps you.
