@@ -15,7 +15,7 @@ So, install Python, Edge browser, the webdriver I am alredy provided here and al
 
 https://github.com/user-attachments/assets/af9ed65a-66ec-4ee7-9d8b-4c6606ece751
 
-##And if you dont want to see whats going on then just put this line in comment
+## And if you dont want to see whats going on then just put this line in comment
 ```bash
 options.add_argument("--headless") #line no 133
 ```
