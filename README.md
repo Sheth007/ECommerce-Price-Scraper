@@ -1,6 +1,6 @@
 # Price Scraper of E-commerce and Quick-commerce
 
-It is a price scraper of product that you are searching for and also it just run in vs code not make for mobile devices & it is developed using python.
+With the help of this tool you can fetch the price of e commerce and quick commerce products. You can use it in two ways with and without cli.
 
 ## Requirements to use this tool:
 
