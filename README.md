@@ -10,7 +10,7 @@ Since this tools is developed using Python then you need python and also you nee
 So, install Python, Edge browser, the webdriver I am alredy provided here and also Vs Code to run this 👍
 ```
 
-## What happens when you run E-Commerce?
+## What happens when you run E-Commerce or Quick-Commerce?
 
 ```python
 Enter Product Name : Iphone 15
@@ -22,6 +22,15 @@ Enter Product Name : Iphone 15
 3  Flipkart     ₹58,999
 4   JioMart  ₹60,490.00
 ```
+
+```python
+Enter Product Name : vicks vaporub
+
+            company price
+0             Zepto  ₹172
+1  Swiggy Instamart   179
+```
+
 ## What happens when you run Quick Commerce?
 
 ```python
