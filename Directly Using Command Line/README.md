@@ -43,5 +43,5 @@ With gui mode.
 ```bash
 #options.add_argument("--headless") (just comment this out)
 ```
-## ⚡ Sometimes it give you the wrong price but you will get the idea of average price 👍.
+## ⚡ Sometimes it give you the wrong price but you will get the idea of price 👍.
 ## 🌟 Give it a start if it helps you.
