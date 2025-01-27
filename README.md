@@ -31,16 +31,6 @@ Enter Product Name : vicks vaporub
 1  Swiggy Instamart   179
 ```
 
-## What happens when you run Quick Commerce?
-
-```python
-Enter Product Name : vicks vaporub
-
-            company price
-0             Zepto  ₹172
-1  Swiggy Instamart   179
-```
-
 ## Two ways to run this :
 No gui mode.
 
