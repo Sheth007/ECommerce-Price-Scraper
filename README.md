@@ -19,5 +19,4 @@ https://github.com/user-attachments/assets/a5827393-e0ad-447e-b1c1-95fc6f29b708
 
 https://github.com/user-attachments/assets/af9ed65a-66ec-4ee7-9d8b-4c6606ece751
 
-## ⚡ Sometimes it give you the wrong price but you will get the idea of average price 👍.
 ## 🌟 Give it a start if it helps you.
