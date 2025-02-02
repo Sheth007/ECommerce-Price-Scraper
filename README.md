@@ -1,6 +1,6 @@
 # Price Scraper of E-commerce and Quick-commerce
 
-With the help of this tool you can fetch the price of e commerce and quick commerce products. You can use it in two ways with and without cli.
+With the help of this tool you can fetch the price of e commerce and quick commerce products. You can use it in two ways with and without cli. And no need for any api.
 
 ## Requirements to use this tool:
 
