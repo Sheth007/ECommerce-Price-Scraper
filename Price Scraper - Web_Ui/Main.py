@@ -9,28 +9,27 @@ import sys
 import os
 import webbrowser
 
-# Take user input ONCE
 user_product = ui.user_enters_product_name()
 
 print("1. Amazon")
-amazon.amazon_price(user_product)  # Pass input
-time.sleep(2)
+amazon.amazon_price(user_product)
+# time.sleep(2)
 
 print("2. Flipkart")
-flipkart.flipkart_price(user_product)  # Pass input
-time.sleep(2)
+flipkart.flipkart_price(user_product)
+# time.sleep(2)
 
 print("3. Jio Mart")
-jiomart.JioMart_price(user_product)  # Pass input
-time.sleep(2)
+jiomart.JioMart_price(user_product)
+# time.sleep(2)
 
 print("4. Big Basket")
-bigbasket.BigBasket_price(user_product)  # Pass input
-time.sleep(2)
+bigbasket.BigBasket_price(user_product)
+# time.sleep(2)
 
 print("5. Croma")
-croma.croma_price(user_product)  # Pass input
-time.sleep(2)
+croma.croma_price(user_product)
+# time.sleep(2)
 
 print("Opening File")
 txt_file = "Price.txt"
@@ -41,3 +40,4 @@ else:
 
 print("Exiting..........")
 sys.exit()
+print("Job Done 👍")
