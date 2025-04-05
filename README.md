@@ -60,7 +60,7 @@ python app.py
 cd WebUI
 python app.py
 ```
-Then, visit `http://127.0.0.1:5000/` in your browser.
+Then, visit `http://127.0.0.1:5000/` in your browser or just follow the terminal url.
 
 ---
 
@@ -71,14 +71,16 @@ Then, visit `http://127.0.0.1:5000/` in your browser.
 - **BeautifulSoup**
 - **Tkinter**
 - **Flask**
+- **undetected-chromedriver**
 
 ---
 
 ## 📌 Todo / Improvements
 
-- [ ] Add support for more e-commerce platforms (e.g., Amazon, Flipkart, Reliance Digital)
+- [x] Add support for more e-commerce platforms (e.g., Amazon, Flipkart, Reliance Digital)
+- [x] Add proxy & headless mode toggles in settings
+- [ ] Show output in Web
 - [ ] Export results to CSV/Excel
-- [ ] Add proxy & headless mode toggles in settings
 - [ ] Dockerize for easy deployment
 
 ---
