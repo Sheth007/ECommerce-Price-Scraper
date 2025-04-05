@@ -20,8 +20,6 @@ ECommerce-Price-Scraper/
 ├── App/        # Desktop app using Tkinter
 ├── CLI/        # Command-line interface
 ├── WebUI/      # Web interface using Flask
-│   ├── templates/
-│   └── static/
 ├── README.md
 └── requirements.txt
 ```
@@ -36,7 +34,10 @@ cd ECommerce-Price-Scraper
 
 2. **Install dependencies**
 ```bash
-pip install -r requirements.txt
+pip install selenium
+pip install beautifulsoup4
+pip install flask
+pip install undetected-chromedriver
 ```
 
 > 🔐 Note: Some sites may block headless scraping. If issues arise, try running without headless mode or consider using proxies/user-agent rotation.
