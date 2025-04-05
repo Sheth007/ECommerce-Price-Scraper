@@ -47,7 +47,7 @@ cd "ECommerce-Price-Scraper/Price Scraper - Gui"
 ## 🚀 How to Run
 
 ```bash
-python app.py
+python Main.py
 ```
 
 A window will open. Enter your product keyword and click **Search** to see price results.
