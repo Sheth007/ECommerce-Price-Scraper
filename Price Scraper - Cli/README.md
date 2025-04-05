@@ -62,7 +62,9 @@ You'll get the price results printed in your terminal.
 
 Check out how it works in this demo video:
 
-[▶️ Watch Demo](#) <!-- Replace # with your actual video link, e.g., YouTube or local file hosted link -->
+[▶️ Watch Demo]
+
+https://github.com/user-attachments/assets/1ffb8f36-e638-48ea-9109-fb8fc817ee55
 
 ---
 
