@@ -9,7 +9,7 @@ A powerful and flexible tool to **track and compare prices** of products from mu
   - **GUI**: Tkinter-based desktop app.
   - **CLI**: Terminal-based for quick and lightweight use.
   - **WebUI**: Flask-powered web interface.
-- 🧠 Efficient scraping with Selenium and BeautifulSoup.
+- 🧠 Efficient scraping with undetected-chromedriver, Selenium and BeautifulSoup.
 - 📦 Modular code structure for easy customization and extension.
 
 ## 📁 Project Structure
@@ -17,8 +17,8 @@ A powerful and flexible tool to **track and compare prices** of products from mu
 ```
 ECommerce-Price-Scraper/
 │
-├── App/        # Desktop app using Tkinter
 ├── CLI/        # Command-line interface
+├── App/        # Desktop app using Tkinter
 ├── WebUI/      # Web interface using Flask
 ├── README.md
 └── requirements.txt
@@ -39,23 +39,20 @@ pip install beautifulsoup4
 pip install flask
 pip install undetected-chromedriver
 ```
-
-> 🔐 Note: Some sites may block headless scraping. If issues arise, try running without headless mode or consider using proxies/user-agent rotation.
-
 ---
 
 ## 💡 How to Use
-
-### 🖥 GUI (Tkinter)
-```bash
-cd App
-python app.py
-```
 
 ### ⚙️ CLI
 ```bash
 cd CLI
 python scraper.py "product name"
+```
+
+### 🖥 GUI (Tkinter)
+```bash
+cd App
+python app.py
 ```
 
 ### 🌐 Web Interface
