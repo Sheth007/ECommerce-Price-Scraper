@@ -109,9 +109,9 @@ Thanks to the open-source community for the tools and libraries that power this 
 
 ---
 
-## ✨ Author
+## 👨‍💻 Author
 
-**[Sheth007](https://github.com/Sheth007)** – Building tools to make price comparison easier and smarter.
+Built with ❤️ by [Sheth007](https://github.com/Sheth007)  
 
 ---
 
