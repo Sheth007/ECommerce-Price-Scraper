@@ -4,6 +4,7 @@ def JioMart_price(query):
     import time
     import random
     import os
+    import json
 
     print("Initializing JioMart scraper...")
 
@@ -27,41 +28,77 @@ def JioMart_price(query):
     options.add_argument("--disable-renderer-backgrounding")  
     options.add_argument("--disable-background-timer-throttling")  
     options.add_argument("--disable-backgrounding-occluded-windows")
-
+    
     options.add_experimental_option("prefs", {
         "profile.default_content_setting_values.geolocation": 2
     })
 
     try:
-        print("Launching JioMart...")
+        print("Launching Jio Mart...")
         driver = uc.Chrome(options=options)
-
         driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
         search_url = f"https://www.jiomart.com/search/{query}"
         driver.get(search_url)
-        # time.sleep(10)
 
         while driver.execute_script("return document.readyState") != "complete":
             time.sleep(1)
 
         print("Fetching price...")
-        prices = driver.find_element(By.XPATH, '//span[@class="jm-heading-xxs jm-mb-xxs"]')
 
-        if prices:
-            first_price = prices.text.strip()
-            print(f"✅ Price found: ₹{first_price}")
-            with open('Price.txt', 'a', encoding='utf-8') as f:
-                f.write(f"\nJioMart : {first_price}")
+        # name = driver.find_element(By.XPATH, '//div[@class="plp-card-details-name line-clamp jm-body-xs jm-fc-primary-grey-80"]')
+        # p_name = name.text.strip()
+
+        p_name = query
+
+        # prices = driver.find_element(By.XPATH, '//div[@class="plp-card-details-price"]//span[@class="jm-heading-xxs jm-mb-xxs"]')
+        prices = driver.find_element(By.XPATH, '/html/body/main/section/div[1]/div/div[2]/div[3]/div/div/ol/li[1]/a/div[2]/div[2]/div/div[2]/div[1]/span[1]')
+        first_price = prices.text.strip()
+
+        desc = driver.find_element(By.XPATH, '//div[@class="plp-card-details-name line-clamp jm-body-xs jm-fc-primary-grey-80"]')
+        desc_details = desc.text.strip()
+
+        img = driver.find_element(By.XPATH, '//div[contains(@class, "plp-card-image ")]//img')
+        img_src = img.get_attribute("src")
+        p_image_link = img_src
+
+        # p_link = driver.find_element(By.XPATH, "//div[contains(@class, 'algolia_box')]//div[contains(@class, 'algolia_hits')]//div[contains(@class, 'ais-InfiniteHits')]//ol[contains(@class, 'ais-InfiniteHits-list') and contains(@class, 'jm-row') and contains(@class, 'jm-mb-massive')]//li[contains(@class, 'ais-InfiniteHits-item') and contains(@class, 'jm-col-4') and contains(@class, 'jm-mt-base')]//a[contains(@href, '/dp/')]")
+
+        p_link = driver.find_element(By.XPATH, '/html/body/main/section/div[1]/div/div[2]/div[3]/div/div/ol/li[1]/a')
+        href_link = p_link.get_attribute("href")
+        p_link_text = href_link
+
+        product_entry = {
+            "Platform": "Jio Mart",
+            "Product Name": p_name,
+            "Product Price": first_price,
+            "Product Description": desc_details,
+            "Product Image": p_image_link,
+            "Product Link": p_link_text
+        }
+
+        if os.path.exists('price.json') and os.path.getsize('price.json') > 0:
+            with open('price.json', 'r+', encoding='utf-8') as f:
+                try:
+                    existing_data = json.load(f)
+                    if "product" in existing_data and isinstance(existing_data["product"], list):
+                        existing_data["product"].append(product_entry)
+                    else:
+                        existing_data = {"product": [product_entry]}
+                except json.JSONDecodeError:
+                    existing_data = {"product": [product_entry]}
+                f.seek(0)
+                json.dump(existing_data, f, indent=4, ensure_ascii=False)
+                f.truncate()
         else:
-            print("❌ Price not found!")
-            with open('Price.txt', 'a', encoding='utf-8') as f:
-                f.write("\nJioMart Price Error")
+            with open('price.json', 'w', encoding='utf-8') as f:
+                json.dump({"product": [product_entry]}, f, indent=4, ensure_ascii=False)
+
+
+        print("✅ Price and details saved to price.json")
 
     except Exception as e:
-        print(f"⚠️ Error fetching JioMart price: {str(e)}")
-        with open('Price.txt', 'a', encoding='utf-8') as f:
-            f.write(f"\nError fetching price from JioMart: {str(e)}")
+        print(f"⚠️ Error fetching Flipkart price: {str(e)}")
 
     finally:
         driver.quit()

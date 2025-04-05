@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Price Finder</title>
+    <style>
+        /* Gradient background with smooth transition */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5, #ff9a9e);
+            background-size: 300% 300%;
+            animation: gradientShift 8s ease infinite;
+            transition: background 1s ease-in-out;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007BFF;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            font-size: 18px;
+            outline: none;
+            margin-bottom: 20px;
+            transition: border 0.3s ease;
+        }
+
+        input:focus {
+            border: 2px solid #0056b3;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {  
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .loader-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/" method="post" id="productForm">
+            <h2>Enter Product Name</h2>
+            <input type="text" name="product" placeholder="Product To Search..." id="product_nm">
+            <br>
+            <button type="submit">Search</button>
+        </form>
+        <div class="loader-container" id="loader-container">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("productForm").addEventListener("submit", function(event) {
+            const input = document.getElementById("product_nm").value.trim();
+            if (input) {
+                // Show loader overlay
+                document.getElementById("loader-container").style.display = "flex";
+            }
+        });
+    </script>
+</body>
+</html>

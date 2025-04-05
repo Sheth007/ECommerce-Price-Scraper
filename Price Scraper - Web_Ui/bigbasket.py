@@ -4,6 +4,7 @@ def BigBasket_price(query):
     import time
     import random
     import os
+    import json
 
     print("Initializing script...")
 
@@ -27,45 +28,74 @@ def BigBasket_price(query):
     options.add_argument("--disable-renderer-backgrounding")  
     options.add_argument("--disable-background-timer-throttling")  
     options.add_argument("--disable-backgrounding-occluded-windows")
-
+    
     options.add_experimental_option("prefs", {
         "profile.default_content_setting_values.geolocation": 2
     })
 
     try:
-        print("Launching BigBasket...")
+        print("Launching Big Basket...")
         driver = uc.Chrome(options=options)
-
         driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
-        search_url = f"https://www.bigbasket.com/ps/?q={query}" 
+        search_url = f"https://www.bigbasket.com/ps/?q={query}"
         driver.get(search_url)
-        # time.sleep(10)
 
         while driver.execute_script("return document.readyState") != "complete":
             time.sleep(1)
 
-        def get_bigbasket_price(driver):
-            try:
-                prices = driver.find_element(By.XPATH, '//div[@class="Pricing___StyledDiv-sc-pldi2d-0 bUnUzR"]/span[@class="Label-sc-15v1nk5-0 Pricing___StyledLabel-sc-pldi2d-1 gJxZPQ AypOi"]')
-                with open('Price.txt', 'a', encoding='utf-8') as f:
-                    f.write(f"\nBigBasket : {prices.text.strip()}")
+        print("Fetching price...")
 
-                print("Price fetched successfully.")
-                return {query, prices.text.strip()}
+        # name = driver.find_element(By.XPATH, '//div[@class="a-section a-spacing-none puis-padding-right-small s-title-instructions-style"]')
+        # p_name = name.text.strip()
 
-            except Exception as e:
-                with open('Price.txt', 'a', encoding='utf-8') as f:
-                    f.write(f"\nError fetching price from BigBasket: {str(e)}")
+        p_name = query
 
-                print(f"Error fetching price: {str(e)}")
-                return {"company": "BB", "price": f"Error: {str(e)}"}
+        prices = driver.find_element(By.XPATH, '//span[@class="Label-sc-15v1nk5-0 Pricing___StyledLabel-sc-pldi2d-1 gJxZPQ AypOi"]')
+        first_price = prices.text.strip()
 
-        price_info = get_bigbasket_price(driver)
-        print("Price information saved.")
+        desc = driver.find_element(By.XPATH, '//div[@class="break-words h-10 w-full"]')
+        desc_details = desc.text.strip()
+
+        img = driver.find_element(By.XPATH, '//div[@class="DeckImage___StyledDiv-sc-1mdvxwk-1 jbskZj"]//img')
+        img_src = img.get_attribute("src")
+        p_image_link = img_src
+
+        p_link = driver.find_element(By.XPATH, '//a[@class="h-full"]')
+        href_link = p_link.get_attribute("href")
+        p_link_text = href_link
+
+        product_entry = {
+            "Platform": "Big Basket",
+            "Product Name": p_name,
+            "Product Price": first_price,
+            "Product Description": desc_details,
+            "Product Image": p_image_link,
+            "Product Link": p_link_text
+        }
+
+        if os.path.exists('price.json') and os.path.getsize('price.json') > 0:
+            with open('price.json', 'r+', encoding='utf-8') as f:
+                try:
+                    existing_data = json.load(f)
+                    if "product" in existing_data and isinstance(existing_data["product"], list):
+                        existing_data["product"].append(product_entry)
+                    else:
+                        existing_data = {"product": [product_entry]}
+                except json.JSONDecodeError:
+                    existing_data = {"product": [product_entry]}
+                f.seek(0)
+                json.dump(existing_data, f, indent=4, ensure_ascii=False)
+                f.truncate()
+        else:
+            with open('price.json', 'w', encoding='utf-8') as f:
+                json.dump({"product": [product_entry]}, f, indent=4, ensure_ascii=False)
+
+
+        print("✅ Price and details saved to price.json")
 
     except Exception as e:
-        print(f"Critical error: {str(e)}")
+        print(f"⚠️ Error fetching Flipkart price: {str(e)}")
 
     finally:
         driver.quit()
