@@ -1,13 +1,84 @@
-## What happens when you run the code?
-## To run this you can go with non-headless mode which shows everythig like browser opens and product searches and all
+# ⚡ Price Scraper - CLI
 
-https://github.com/user-attachments/assets/af9ed65a-66ec-4ee7-9d8b-4c6606ece751
+A fast and minimal **Command-Line Price Scraper** for Indian e-commerce platforms. Easily check product prices in real time using **Selenium** with **Microsoft Edge**.
 
-## And if you dont want to see whats going on then just put this line in comment
+---
+
+## ✨ Highlights
+
+- 🔤 Command-line based, no GUI needed
+- 🔍 Real-time scraping of prices
+- 💡 Built with simplicity and speed in mind
+- 🌐 Uses Microsoft Edge + Edge WebDriver
+
+---
+
+## 📦 Used Libraries
+
+No `requirements.txt` — just a few core Python libraries:
+
+- `selenium`
+- `bs4` (BeautifulSoup)
+
+> Only `selenium` and `bs4` may require pip installation.
+
 ```bash
-options.add_argument("--headless") #line no 133
+pip install selenium beautifulsoup4
 ```
-<h5>⚠ Tip : so, due to website loads data dynamically then sometims price will not be fetched then you just run this code with gui (so you can see browser opens and product being searches and all)</h5>
 
-## ⚡ Sometimes it give you the wrong price but you will get the idea of price 👍.
-## 🌟 Give it a start if it helps you.
+---
+
+## ⚙️ Setup
+
+1. **Clone this repo**
+```bash
+git clone https://github.com/Sheth007/ECommerce-Price-Scraper.git
+cd "ECommerce-Price-Scraper/Price Scraper - Cli"
+```
+
+2. **Make sure you have:**
+   - Python 3.7+
+   - Microsoft Edge installed
+   - [Edge WebDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/) added to your system PATH
+
+---
+
+## 🚀 Usage
+
+```bash
+python scraper.py "product name"
+```
+
+Example:
+```bash
+python scraper.py "iPhone 15"
+```
+
+You'll get the price results printed in your terminal.
+
+---
+
+## 🎥 Demo
+
+Check out how it works in this demo video:
+
+[▶️ Watch Demo](#) <!-- Replace # with your actual video link, e.g., YouTube or local file hosted link -->
+
+---
+
+## 📌 Notes
+
+- Headless mode is not used — you’ll see the browser open during scraping.
+- Works best with a stable internet connection and valid search terms.
+
+---
+
+## 👨‍💻 Author
+
+Built with ❤️ by [Sheth007](https://github.com/Sheth007)  
+Explore the full project: [ECommerce-Price-Scraper](https://github.com/Sheth007/ECommerce-Price-Scraper)
+
+---
+
+⭐ **Star this repo** if it helped you!
+
