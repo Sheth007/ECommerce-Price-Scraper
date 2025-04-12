@@ -11,24 +11,6 @@ A lightweight **Flask-based web app** for scraping product prices from Indian e-
 
 ---
 
-## 📋 TODO List
-
-Here's what's planned:
-
-### ✅ Current Progress
-- [x] Scraping backend (Undetected_chromedriver)
-- [x] UI styling
-- [x] Add error handling and loading indicators
-- [x] Input form on homepage
-- [x] Flask app setup
-- [x] Display scraped results on the webpage
-
-### 🔜 Upcoming Features
-- [ ] Option to download results (CSV/JSON)
-- [ ] Deploy using Render/Heroku
-
----
-
 ## 📦 Used Libraries
 
 - `flask`
