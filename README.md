@@ -39,6 +39,13 @@ pip install beautifulsoup4
 pip install flask
 pip install undetected-chromedriver
 ```
+
+2. **Minimum Requirements**
+```bash
+Good Pc / Laptop
+Stable internet comection (Minimum 500KBps/s)
+Latest chrome browser
+```
 ---
 
 ## 💡 How to Use
@@ -72,16 +79,6 @@ Then, visit `http://127.0.0.1:5000/` in your browser or just follow the terminal
 - **Tkinter**
 - **Flask**
 - **undetected-chromedriver**
-
----
-
-## 📌 Todo / Improvements
-
-- [x] Add support for more e-commerce platforms (e.g., Amazon, Flipkart, Reliance Digital)
-- [x] Add proxy & headless mode toggles in settings
-- [ ] Show output in Web
-- [ ] Export results to CSV/Excel
-- [ ] Dockerize for easy deployment
 
 ---
 
