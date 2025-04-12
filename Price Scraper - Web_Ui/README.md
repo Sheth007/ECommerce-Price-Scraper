@@ -2,15 +2,12 @@
 
 A lightweight **Flask-based web app** for scraping product prices from Indian e-commerce websites. Designed for users who prefer a browser experience.
 
-> ⚠️ **Note:** This project is currently in active development. Output is saved to a `price.json` file and **not yet displayed on the webpage**.
-
 ---
 
 ## ✨ Features
 
 - 🌍 Web-based interface powered by Flask
 - 🔍 Real-time product price scraping
-- 📁 Results saved to `price.json`
 
 ---
 
@@ -19,15 +16,14 @@ A lightweight **Flask-based web app** for scraping product prices from Indian e-
 Here's what's planned:
 
 ### ✅ Current Progress
-- [x] Scraping backend (Selenium + BeautifulSoup)
-- [x] Save results to `price.json`
+- [x] Scraping backend (Undetected_chromedriver)
 - [x] UI styling
 - [x] Add error handling and loading indicators
 - [x] Input form on homepage
 - [x] Flask app setup
+- [x] Display scraped results on the webpage
 
 ### 🔜 Upcoming Features
-- [ ] Display scraped results on the webpage
 - [ ] Option to download results (CSV/JSON)
 - [ ] Deploy using Render/Heroku
 
@@ -67,9 +63,7 @@ Visit: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ---
 
-## 🎥 Demo (Coming Soon)
-
-> A demo video will be added once the frontend is connected to display the results.
+## 🎥 Demo 
 
 ---
 
