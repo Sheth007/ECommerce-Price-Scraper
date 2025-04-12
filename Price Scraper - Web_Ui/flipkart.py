@@ -32,7 +32,7 @@ def flipkart_price(query):
         "profile.default_content_setting_values.geolocation": 2
     })
 
-    driver = None  # ✅ Initialize driver as None
+    driver = None 
 
     try:
         print("Launching Flipkart...")
@@ -47,7 +47,7 @@ def flipkart_price(query):
 
         print("Fetching price...")
 
-        name = driver.find_element(By.XPATH, '//div[@class="KzDlHZ"]')
+        name = driver.find_element(By.XPATH, '//*[@id="container"]/div/div[3]/div[1]/div[2]/div[2]/div/div/div/a/div[2]/div[1]/div[1]')
         p_name = name.text.strip()
 
         prices = driver.find_element(By.XPATH, '//div[@class="Nx9bqj _4b5DiR"]')
@@ -73,34 +73,14 @@ def flipkart_price(query):
             "Product Link": p_link_text
         }
 
-        if os.path.exists('price.json') and os.path.getsize('price.json') > 0:
-            with open('price.json', 'r+', encoding='utf-8') as f:
-                try:
-                    existing_data = json.load(f)
-                    if "product" in existing_data and isinstance(existing_data["product"], list):
-                        existing_data["product"].append(product_entry)
-                    else:
-                        existing_data = {"product": [product_entry]}
-                except json.JSONDecodeError:
-                    existing_data = {"product": [product_entry]}
-                f.seek(0)
-                json.dump(existing_data, f, indent=4, ensure_ascii=False)
-                f.truncate()
-        else:
-            with open('price.json', 'w', encoding='utf-8') as f:
-                json.dump({"product": [product_entry]}, f, indent=4, ensure_ascii=False)
-
-
-        print("✅ Price and details saved to price.json")
+        return product_entry
 
     except Exception as e:
         print(f"⚠️ Error fetching Flipkart price: {str(e)}")
 
     finally:
-        if driver:  # ✅ Check if driver was initialized before quitting
-            driver.quit()
-            print("Browser closed.")
-
-# Example Usage:
-# flipkart_price("iPhone 13")
-
+        if driver:
+            try:
+                driver.quit()
+            except Exception as e:
+                print("⚠️ Error while quitting Chrome:", e)

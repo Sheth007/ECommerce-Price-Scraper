@@ -1,112 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Product Prices</title>
-    <style>
-        /* Apply the same styling from index.html */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #74ebd5, #acb6e5, #ff9a9e);
-            background-size: 300% 300%;
-            animation: gradientShift 8s ease infinite;
-        }
+  <meta charset="UTF-8">
+  <title>Product Result</title>
+  <link rel="shortcut icon" href="static\Favicon.png" type="image/x-icon">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #acb6e5, #ff9a9e);
+      background-size: 300% 300%;
+      animation: gradientShift 8s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        .container {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            width: 400px;
-        }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        h2 {
-            color: #007BFF;
-        }
+    .container {
+      display: flex;
+      flex-wrap: nowrap;
+      background-color: whitesmoke;
+      border-radius: 20px;
+      border: 2px;
+      width: 90%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
+    .image-box {
+      flex: 1 1 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
+    .image-box img {
+      max-width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
 
-        th {
-            background-color: #007BFF;
-            color: white;
-        }
+    .content {
+      flex: 2 1 400px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
 
-        a {
-            display: inline-block;
-            margin-top: 15px;
-            text-decoration: none;
-            background-color: #007BFF;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 5px;
-        }
+    .product-title {
+      color: #333;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-align: center;
+      margin-left: -129px;
+    }
 
-        a:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    .product-description ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .price-boxes {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .price-card {
+      flex: 1 1 22%;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .price-card img {
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .price-card a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .price-card {
+        flex: 1 1 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .price-card {
+        flex: 1 1 100%;
+      }
+    }
+
+    .skeleton {
+      animation: pulse 1.5s infinite ease-in-out;
+      background: linear-gradient(90deg, #cfcfcf 25%, #e6e6e6 50%, #cfcfcf 75%);
+      background-size: 200% 100%;
+    }
+
+    @keyframes pulse {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .outer-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+      box-sizing: border-box;
+      margin-left: -150px;
+      margin-top: 20px;
+    }
+
+    .skeleton-container {
+      display: flex;
+      height: 100%;
+      width: 150%;
+      border: 3px;
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 35px;
+    }
+
+    .sidebar {
+      width: 250px;
+      border: 1px solid aliceblue;
+      margin-right: 10px;
+      height: 100%;
+      border-radius: 30px;
+      margin-top: -7px;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .top-box {
+      height: 30px;
+      width: 50%;
+      margin-left: 10px;
+      border: 1px solid whitesmoke;
+      margin-bottom: 10px;
+      border-radius: 50px;
+    }
+
+    .down-box {
+      height: 30px;
+      width: 80%;
+      margin-left: 10px;
+      border: 1px solid whitesmoke;
+      margin-bottom: 10px;
+      border-radius: 50px;
+    }
+
+    .bottom-row {
+      display: flex;
+      gap: 25px;
+      padding: 15px;
+      box-sizing: border-box;
+      justify-content: space-between;
+    }
+
+    .bottom-box {
+      flex: 1;
+      height: 100px;
+      border: 1px solid whitesmoke;
+      border-radius: 30px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Product Prices for: <span id="product_name">{{product_name}}</span></h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Platform</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody id="price-table"></tbody>
-        </table>
-
-        <a href="/">Go Back</a>
+  <div class="container">
+    <div class="image-box">
+      <img id="product-image" src="" alt="">
     </div>
+    <div class="content">
+      <div id="product-title" class="product-title">
+        <div class="outer-container">
+          <div class="skeleton-container">
+            <div class="sidebar skeleton"></div> 
+            <div class="main">
+              <div class="top-box skeleton"></div>
+              <div class="down-box skeleton"></div>
+              <div class="down-box skeleton"></div>
+              <div class="down-box skeleton"></div>
+              <div class="bottom-row">
+                <div class="bottom-box skeleton"></div>
+                <div class="bottom-box skeleton"></div>
+                <div class="bottom-box skeleton"></div>
+                <div class="bottom-box skeleton"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="product-description" class="product-description">
+        <ul></ul>
+      </div>
+      <div id="price-boxes" class="price-boxes"></div>
+    </div>
+  </div>
 
-    <script>
-        function fetchPrices() {
-            fetch("/fetch_prices")
-                .then(response => response.json())
-                .then(data => {
-                    let tableBody = document.getElementById("price-table");
-                    tableBody.innerHTML = "";
+  <script>
+    const product = "{{ product_name }}";
 
-                    if (data.prices.length > 0) {
-                        data.prices.forEach(price => {
-                            let row = document.createElement("tr");
-                            row.innerHTML = `<td>${price.platform}</td><td>${price.price}</td>`;
-                            tableBody.appendChild(row);
-                        });
-                    } else {
-                        tableBody.innerHTML = `<tr><td colspan="2">No prices available.</td></tr>`;
-                    }
-                })
-                .catch(error => console.error("Error fetching prices:", error));
+    const platformLogos = {
+      "Amazon": "amazon.png",
+      "Flipkart": "flipkart.png",
+      "Croma": "croma.png",
+      "Jio Mart": "jiomart.png"
+    };
+
+    fetch(`/fetch_prices?product=${encodeURIComponent(product)}`)
+      .then(res => res.json())
+      .then(data => {
+        const prices = data.prices;
+
+        const flipkart = prices.find(p => p.Platform === "Flipkart");
+
+        if (flipkart) {
+          document.getElementById("product-image").src = flipkart["Product Image"] || "";
+          document.getElementById("product-title").innerText = flipkart["Product Name"] || "";
+
+          const descriptionText = flipkart["Product Description"] || "";
+          const bulletPoints = descriptionText.split("\n").filter(line =>
+            line && !line.trim().startsWith("₹") && !line.includes("off") && !line.includes("Free delivery")
+          );
+
+          const descriptionList = document.querySelector("#product-description ul");
+          bulletPoints.forEach(point => {
+            const li = document.createElement("li");
+            li.textContent = point.trim();
+            descriptionList.appendChild(li);
+          });
         }
 
-        fetchPrices(); // Fetch prices on page load
-        setInterval(fetchPrices, 3000); // Auto-refresh prices every 3 seconds
-    </script>
+        const priceBoxes = document.getElementById("price-boxes");
+        prices.forEach(p => {
+          const card = document.createElement("div");
+          card.className = "price-card";
+
+          const logo = `/static/${platformLogos[p.Platform] || "croma.png"}`;
+          const price = p["Product Price"] || "N/A";
+          const link = p["Product Link"] || "#";
+
+          card.innerHTML = `
+            <a href="${link}" target="_blank">
+              <img src="${logo}" alt="${p.Platform}"><br/>
+              ${price}
+            </a>
+          `;
+          priceBoxes.appendChild(card);
+        });
+      })
+      .catch(err => {
+        console.error("Error fetching prices:", err);
+        document.getElementById("product-title").innerText = "Failed to load product details.";
+      });
+  </script>
 </body>
 </html>
+
+

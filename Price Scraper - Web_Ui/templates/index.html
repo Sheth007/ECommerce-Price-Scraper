@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Product Price Finder</title>
+    <title>Price Scraper</title>
+    <link rel="shortcut icon" href="static\Favicon.png" type="image/x-icon">
     <style>
-        /* Gradient background with smooth transition */
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -119,7 +119,6 @@
         document.getElementById("productForm").addEventListener("submit", function(event) {
             const input = document.getElementById("product_nm").value.trim();
             if (input) {
-                // Show loader overlay
                 document.getElementById("loader-container").style.display = "flex";
             }
         });
