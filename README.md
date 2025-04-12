@@ -40,7 +40,7 @@ pip install flask
 pip install undetected-chromedriver
 ```
 
-2. **Minimum Requirements**
+3. **Minimum Requirements**
 ```bash
 Good Pc / Laptop
 Stable internet comection (Minimum 500KBps/s)
